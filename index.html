@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garage</title>
+    <link rel="icon" type="image/jpg" href="images/icon.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #2e034b 0%, #313749 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+            background-color: #1e293bcc;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px #0000004d, 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+        .glow {
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg text-white font-sans flex flex-col justify-center">
+    <div class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">The Garage</h1>
+            <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">
+                Select One Of The Cars Below To Access Their Website
+            </p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
+            <!-- Person 1 Card -->
+            <div class="card-hover w-full max-w-sm bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20">
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-indigo-900 bg-opacity-60 flex items-center justify-center glow overflow-hidden">
+                        <img src="images/Venner.jpg" alt="Veneer" class="w-full h-full object-cover">
+                    </div>
+                    <h2 class="text-2xl font-bold mb-3">Veneer</h2>
+                    <p class="text-white text-opacity-80 mb-6">
+                        Purple Blob Of The Cat Shaped Variety
+                    </p>
+                    <a href="Veneer" class="inline-block px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition duration-300">
+                        Meow, Go Here! <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Person 2 Card -->
+            <div class="card-hover w-full max-w-sm bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20">
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center glow overflow-hidden">
+                        <img src="images/brisk.jpg" alt="Brisk" class="w-full h-full object-cover">
+                    </div>
+                    <h2 class="text-2xl font-bold mb-3">Brisk</h2>
+                    <p class="text-white text-opacity-80 mb-6">
+                        Artist, Fursiuter, Streamer On Occasion
+                    </p>
+                    <a href="Brisk" class="inline-block px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition duration-300">
+                        Meow, Go Here! <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-20 text-center text-white text-opacity-50">
+            <p>&copy; 2025 The Garage. All rights reserved but not really.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card-hover');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.querySelector('i').classList.add('fa-bounce');
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.querySelector('i').classList.remove('fa-bounce');
+                });
+            });
+            
+            // Add a subtle animation to the header
+            const header = document.querySelector('h1');
+            header.style.opacity = '0';
+            header.style.transform = 'translateY(20px)';
+            header.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                header.style.opacity = '1';
+                header.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

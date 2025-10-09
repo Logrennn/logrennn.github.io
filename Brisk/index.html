@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOK AT ME!</title>
+    <link rel="icon" type="image/jpg" href="./../images/icon.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .profile-card {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.25);
+        }
+        
+        .link-item {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .link-item:hover::before {
+            left: 100%;
+        }
+        
+        .link-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .avatar {
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
+        
+    </style>
+</head>
+<body class="min-h-screen pb-16">
+    <div class="w-full max-w-md mx-auto p-4">
+        <!-- Hero Section -->
+        <div class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
+            <div class="fixed inset-0 z-0">
+                <img id="bgImage" src="images/background.png" 
+                     alt="Background" 
+                     class="w-full h-full object-cover transition-all duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+            </div>
+            <div class="relative z-10 text-white max-w-2xl px-4">
+                <h1 class="text-4xl font-bold mb-2">Brisk Tiger</h1>
+                <p class="text-xl text-white text-opacity-90 mb-4">Stupid Cat On The Internet</p>
+                <p class="text-lg text-white text-opacity-80 mb-8">Artist, Fursiuter, Streamer On Occasion</p>
+                <div class="animate-bounce">
+                    <button onclick="document.getElementById('links-section').scrollIntoView({ behavior: 'smooth' })" 
+                            class="cursor-pointer text-white hover:text-opacity-80 transition-colors">
+                        <i class="fas fa-chevron-down text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Links Section -->
+        <div id="links-section" class="space-y-6 py-12">
+
+            <!-- About Me Section -->
+            <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-4">
+                <h2 class="text-lg font-semibold text-gray-700 mb-3 pl-2">About Me</h2>
+                <div class="text-gray-800 text-sm leading-relaxed space-y-2 px-2">
+                    <p>Hey I'm Brisk, Artist, Fursuiter, and every once in a blue moon, a streamer. I have a passion for Computers
+                    (another IT furry right?), Photography, and making people laugh. When I'm not being a weirdo cat, find me in the gym, 
+                    outdoors, or in the kitchen. I promise I don't bite, come say Hi!</p>
+                </div>
+            </div>
+           
+            <!-- Social Media Section -->
+            <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-4">
+                <h2 class="text-lg font-semibold text-gray-700 mb-3 pl-2">Social Media</h2>
+                <div class="space-y-3">
+                    <a href="https://www.instagram.com/brisk.tiger/" 
+                    class="link-item block bg-pink-600 text-white p-4 rounded-xl text-center font-medium hover:bg-pink-700"
+                    target="_blank">
+                        <i class="fab fa-instagram mr-2"></i> Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@brisk.tiger?_t=ZT-8y8mRNACZQL&_r=1" 
+                    class="link-item block bg-black text-white p-4 rounded-xl text-center font-medium hover:bg-gray-800"
+                    target="_blank">
+                        <i class="fab fa-tiktok mr-2"></i> TikTok
+                    </a>
+                    <a href="https://discord.com/users/1228888282301988886" 
+                    class="link-item block bg-indigo-600 text-white p-4 rounded-xl text-center font-medium hover:bg-indigo-700"
+                    target="_blank">
+                        <i class="fab fa-discord mr-2"></i> Discord
+                    </a>
+                    <a href="https://x.com/BriskTheTiger" 
+                    class="link-item block bg-blue-500 text-white p-4 rounded-xl text-center font-medium hover:bg-blue-600"
+                    target="_blank">
+                        <i class="fab fa-twitter mr-2"></i> Twitter
+                    </a>
+                    <a href="/After_Dark/"
+                    class="link-item block bg-green-600 text-white p-4 rounded-xl text-center font-medium hover:bg-green-700"
+                    target="_blank">
+                        <i class="far fa-smile-wink mr-2"></i> +18 Content
+                    </a>
+                </div>
+            </div>
+
+            <!-- Art Section -->
+            <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-4">
+                <h2 class="text-lg font-semibold text-gray-700 mb-3 pl-2 flex items-center">
+                    Art & Commissions
+                    <span class="ml-2 px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800">
+                        Closed
+                    </span>
+                </h2>
+                <div class="space-y-3">
+                    <a href="https://docs.google.com/document/d/10X4tJf2Acn1HvE1SFqVUaADVPc0Pc4KJKQ3K-UA0uN0/edit?tab=t.0" 
+                    class="link-item block bg-yellow-500 text-white p-4 rounded-xl text-center font-medium hover:bg-yellow-600"
+                    target="_blank">
+                        <i class="fas fa-file-contract mr-2"></i> Commission TOS + Prices
+                    </a>
+                    <a href="https://form.jotform.com/243226809139056" 
+                    class="link-item block bg-orange-500 text-white p-4 rounded-xl text-center font-medium hover:bg-orange-600"
+                    target="_blank">
+                        <i class="fas fa-edit mr-2"></i> Commission Form
+                    </a>
+                </div>
+            </div>
+
+            <!-- Streaming Section -->
+            <div class="bg-white bg-opacity-80 backdrop-blur-sm rounded-xl p-4">
+                <h2 class="text-lg font-semibold text-gray-700 mb-3 pl-2">Live Streaming</h2>
+                <div class="space-y-3">
+                    <a href="https://www.twitch.tv/brisktiger" 
+                    class="link-item block bg-purple-600 text-white p-4 rounded-xl text-center font-medium hover:bg-purple-700"
+                    target="_blank">
+                        <i class="fab fa-twitch mr-2"></i> Twitch Channel
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        
+        </div>
+        
+        <!-- Footer -->
+        <div class="w-full py-4 text-center text-gray-200 p-4 text-sm bg-white bg-opacity-5 backdrop-blur-sm">
+            <p>© 2025 Brisk Tiger. All rights reserved.</p>
+            <div class="mt-2 text-xs text-gray-300">
+                <p>Powered by HTML & </p>
+                <a href="https://tailwindcss.com"
+                target="_blank">
+                    Tailwind CSS</a>
+            </div>
+        </div>
+
+    <script>
+        // Scroll blur effect
+        window.addEventListener('scroll', function() {
+            const bgImage = document.getElementById('bgImage');
+            const scrollPosition = window.scrollY;
+            const blurAmount = Math.min(scrollPosition / 50, 10); // Max blur of 10px
+            bgImage.style.filter = `blur(${blurAmount}px)`;
+            bgImage.style.transform = `scale(${1 + blurAmount * 0.01})`; // Slight zoom effect
+        });
+
+        // Add animation to links when they come into view
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.link-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, 100 * index);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            links.forEach(link => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateY(20px)';
+                link.style.transition = 'all 0.5s ease';
+                observer.observe(link);
+            });
+        });
+    </script>
+</body>
+</html>
